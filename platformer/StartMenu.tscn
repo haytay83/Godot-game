@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Nature.tres" type="TileSet" id=2]
+[ext_resource path="res://MoreTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://tilesetOpenGameBackground.png" type="Texture" id=4]
+[ext_resource path="res://StartMenu.gd" type="Script" id=5]
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 80.0
+margin_top = 18.0
+margin_right = 160.0
+margin_bottom = 71.0
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 80.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.737255, 0.141176, 0.862745, 1 )
+text = "Robot-Man Jump!"
+
+[node name="StartGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 15.0
+margin_right = 80.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.854902, 0.137255, 0.137255, 1 )
+text = "Start Game"
+flat = true
+
+[node name="QuitGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 80.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.854902, 0.137255, 0.137255, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Quit Game"
+flat = true
+
+[node name="natureTileMap" type="TileMap" parent="."]
+position = Vector2( 0, -1 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="BadTileMap" type="TileMap" parent="."]
+show_behind_parent = true
+position = Vector2( 0, -1 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 524288
+format = 1
+tile_data = PoolIntArray( -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -65536, 2, 0, -65522, 1, 0, 0, 2, 0, 14, 1, 0, 65536, 2, 0, 65550, 1, 0, 131072, 2, 0, 131086, 1, 0, 196608, 2, 0, 196622, 1, 0, 262144, 2, 0, 262158, 1, 0, 327680, 2, 0, 327694, 1, 0, 393216, 2, 0, 393230, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 107.757, 30.5858 )
+texture = ExtResource( 4 )
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]

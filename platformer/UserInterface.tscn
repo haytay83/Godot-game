@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI Resouces/Ammo counter.png" type="Texture" id=2]
+[ext_resource path="res://UserInterface.gd" type="Script" id=3]
+[ext_resource path="res://UI Resouces/heart pixel art/heart pixel art/Heart/heart pixel art 254x254.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.909804, 0.0823529, 0.0823529, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.133333, 0.101961, 0.101961, 1 )
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0784314, 0.0745098, 0.0745098, 0.227451 )
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[node name="UserInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -22.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoCount" type="Label" parent="."]
+margin_left = 203.607
+margin_top = -25.0
+margin_right = 250.607
+margin_bottom = 1.1716
+custom_fonts/font = ExtResource( 1 )
+text = "x 1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoCountPic" type="TextureRect" parent="AmmoCount"]
+margin_left = -21.75
+margin_top = -0.125
+margin_right = 2.25
+margin_bottom = 15.875
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+margin_left = 23.6766
+margin_top = -25.0
+margin_right = 100.677
+margin_bottom = -14.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBarPic" type="TextureRect" parent="HealthBar"]
+margin_left = -18.8858
+margin_top = -0.123067
+margin_right = 5.11424
+margin_bottom = 15.8769
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerHealth" type="Timer" parent="."]
+wait_time = 0.2
