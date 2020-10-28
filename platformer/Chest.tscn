@@ -2,11 +2,9 @@
 
 [ext_resource path="res://009 - Treasure Chests/009 treasure chests.png" type="Texture" id=1]
 
-[node name="Node" type="Node"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 8, 1.42109e-14 )
-scale = Vector2( 0.220967, 0.212837 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 8, 96, 50 )
+region_rect = Rect2( 69.1682, 8.12212, 20.983, 19.8445 )
