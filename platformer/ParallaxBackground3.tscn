@@ -7,6 +7,6 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 1209.07, 659.758 )
-scale = Vector2( 18.9821, 10.5197 )
+position = Vector2( 1804.71, 659.758 )
+scale = Vector2( 26.9239, 10.5197 )
 texture = ExtResource( 1 )
